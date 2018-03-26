@@ -1,0 +1,48 @@
+@import '../Shared/mixins.scss';
+@import '../Shared/variables.scss';
+@import '../Shared/typography.scss';
+
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 2em;
+  text-align: center;
+  padding: 1em;
+
+  &__title {
+    font-size: 16px;
+  }
+
+  &__legend {
+    margin-bottom: 1em;
+    opacity: .7;
+  }
+
+  input, textarea {
+    padding: 0.5em;
+    outline-color: color(principal-color);
+  }
+
+  input[type='submit'] {
+    border: 2px solid color(white);
+    background: color(principal-color);
+    font-family: $font-title;
+    text-transform: uppercase;
+    color: color(white);
+    padding: .5em;
+    font-size: 16px;
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  &__span {
+    background: color(principal-color);
+    color: color(white);
+    font-size: 14px;
+    display: block;
+    width: 80%;
+    margin-top: .2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

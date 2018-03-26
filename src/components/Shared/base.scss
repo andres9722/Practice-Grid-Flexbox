@@ -42,6 +42,12 @@ p {
   margin: 0;
 }
 
+input, textarea {
+  display: block;
+  width: 100%;
+  font-family: $font-text;
+}
+
 .l-container {
   max-width: 1400px;
   margin: 0 auto;
