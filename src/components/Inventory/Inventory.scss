@@ -1,0 +1,70 @@
+@import '../Shared/mixins.scss';
+@import '../Shared/variables.scss';
+@import '../Shared/typography.scss';
+
+.inventory {
+
+  &__container {
+    padding: 3em 1em;
+    background: url('https://images.pexels.com/photos/408503/pexels-photo-408503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+    no-repeat center;
+    position: relative;
+    text-align: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn2.hubspot.net/hubfs/3426102/Mediasmart%20October2017%20Theme/Images/bck-dots.png?t=1512467605984') repeat top left;
+      z-index: 0;
+      opacity: .9;
+    }
+  }
+
+  &__title {
+    color: color(white);
+    position: relative;
+    z-index: 6;
+    opacity: .8;
+  }
+
+  &__targets {
+    position: relative;
+
+    @include from($large) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    z-index: 6;
+    background: color(principal-color);
+    padding: 1em 0;
+    margin-top: 1em;
+    transform: skewX(-5deg);
+    box-shadow: 0 2px 5px color(dark);
+
+    &:nth-child(1), &:nth-child(3) {
+      background: color(white);
+    }
+
+    &:nth-child(2) {
+      color: color(white);
+    }
+  }
+
+  &__copy {
+    transform: skewX(5deg);
+  }
+
+  &__description, &__time {
+    opacity: .8;
+  }
+
+}

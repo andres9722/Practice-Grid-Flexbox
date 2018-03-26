@@ -1,0 +1,53 @@
+@import '../Shared/mixins.scss';
+@import '../Shared/variables.scss';
+@import '../Shared/typography.scss';
+
+.information {
+  padding: 1em;
+  display: grid;
+
+  &__section {
+    margin-top: 2em;
+    display: grid;
+
+    @include from($large) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px;
+      border-bottom: 1px solid color(border-color);
+      padding: 3em 0;
+      margin: 0;
+    }
+
+    &:last-child {
+      .information__img {
+        display: none;
+
+        @include from($large) {
+          display: block;
+          width: 300px;
+          justify-self: center;
+        }
+      }
+    }
+  }
+
+  &__copy {
+    align-self: center;
+  }
+
+  &__title {
+    text-align: center;
+    padding: 0.5em;
+    box-shadow: 0 1px 0 color(border-color);
+
+    @include from($large) {
+      text-align: left;
+      padding: .5em 0;
+    }
+  }
+
+  &__content {
+    opacity: .8;
+    margin: 1em 0;
+  }
+}
