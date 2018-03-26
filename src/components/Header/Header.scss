@@ -9,11 +9,11 @@
   left: 0;
   width: 100%;
   z-index: 5;
+  transition: background .5s cubic-bezier(.54,.11,.24,1.63) , padding .5s cubic-bezier(.54,.11,.24,1.63);
 
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, fit-content);
 
     @include from($large) {
       grid-template-columns: 55% 45%;
@@ -42,7 +42,6 @@
     @include from($large) {
       position: relative;
       min-height: auto;
-      height: 50px;
       transform: translate(0);
       top: 0;
       grid-column-start: 2;
@@ -59,7 +58,6 @@
 
       @include from($large) {
         grid-template-columns: repeat(5, auto);
-        text-align: right;
       }
 
       &__item {
@@ -72,12 +70,17 @@
 
         @include from($large) {
           font-size: 16px;
-          justify-self: end;
           width: 100%;
           padding: 0;
           border: none;
           cursor: pointer;
           z-index: 50;
+          padding: 0.3em 0;
+
+          &:last-child {
+            background: color(principal-color);
+            transform: skewX(-5deg);
+          }
         }
       }
 
@@ -124,7 +127,6 @@
 
   .menu__icon {
     position: relative;
-    justify-self: end;
     align-self: center;
     transform: skewX(-5deg);
 
@@ -183,6 +185,15 @@
         top: 0;
       }
 
+    }
+  }
+
+
+  &--sticky {
+    background: rgba(color(dark), .7);
+
+    @include from($large) {
+      padding: 2em;
     }
   }
 }

@@ -7,6 +7,7 @@ export default class Header {
     this.menuIcon = this.node.querySelector('.menu__icon')
     this.nav = this.node.querySelector('.nav')
     this.showMenu()
+    this.animated()
   }
 
   setTemplate () {
@@ -37,6 +38,13 @@ export default class Header {
     this.menuIcon.addEventListener('click', e => {
       this.nav.classList.toggle('nav--show')
       this.menuIcon.classList.toggle('menu__icon--active')
+    })
+  }
+
+  animated () {
+    window.addEventListener('scroll', e => {
+      let top = window.pageYOffset;
+      (top > this.node.offsetHeight) ? this.node.classList.add('header--sticky') : this.node.classList.remove('header--sticky')
     })
   }
 }
